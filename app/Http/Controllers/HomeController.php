@@ -33,10 +33,10 @@ class HomeController extends Controller
 
     public function save(Request $request)
     {
+            echo "Save Function<br>";
+            echo "First name:",$_REQUEST["fname"];
+            echo "Last name:",$_REQUEST["lname"];
 
-        echo "Save Function<br>";
-        echo "First Name:", $_REQUEST["fname"];
-        echo "Last Name:", $_REQUEST["lname"];
 
     }
 

@@ -1,35 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield("title")</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End Plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/style.css">
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{asset('assets')}}/admin/images/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="{{asset('assets')}}/admin/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/libs/css/style.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+
     @yield("head")
 </head>
+
 <body>
-
-
-
 @include("admin.header")
 
-@section('sidebar')
+@section('admin.sidebar')
     @include("admin.sidebar")
 @show
 
-@yield ('content')
+@yield('content')
 
 @include("admin.footer")
 @yield('foot')
+
+
+</body>
+</html>

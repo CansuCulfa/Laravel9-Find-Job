@@ -1,205 +1,288 @@
 
 
-<!-- partial -->
-<div class="container-fluid page-body-wrapper">
-    <!-- partial:../../partials/_navbar.html -->
-    <nav class="navbar p-0 fixed-top d-flex flex-row">
-        <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="{{asset('assets')}}/admin/images/logo-mini.svg" alt="logo" /></a>
-        </div>
-        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-                <span class="mdi mdi-menu"></span>
+<div class="nav-left-sidebar sidebar-dark">
+    <div class="menu-list">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <ul class="navbar-nav w-100">
-                <li class="nav-item w-100">
-                    <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                        <input type="text" class="form-control" placeholder="Search products">
-                    </form>
-                </li>
-            </ul>
-            <ul class="navbar-nav navbar-nav-right">
-                <li class="nav-item dropdown d-none d-lg-block">
-                    <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                        <h6 class="p-3 mb-0">Projects</h6>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-file-outline text-primary"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject ellipsis mb-1">Software Development</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-web text-info"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject ellipsis mb-1">UI Development</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-layers text-danger"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject ellipsis mb-1">Software Testing</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <p class="p-3 mb-0 text-center">See all projects</p>
-                    </div>
-                </li>
-                <li class="nav-item nav-settings d-none d-lg-block">
-                    <a class="nav-link" href="#">
-                        <i class="mdi mdi-view-grid"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown border-left">
-                    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="mdi mdi-email"></i>
-                        <span class="count bg-success"></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                        <h6 class="p-3 mb-0">Messages</h6>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <img src="{{asset('assets')}}/admin/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
-                                <p class="text-muted mb-0"> 1 Minutes ago </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <img src="{{asset('assets')}}/admin/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
-                                <p class="text-muted mb-0"> 15 Minutes ago </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <img src="{{asset('assets')}}/admin/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
-                                <p class="text-muted mb-0"> 18 Minutes ago </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <p class="p-3 mb-0 text-center">4 new messages</p>
-                    </div>
-                </li>
-                <li class="nav-item dropdown border-left">
-                    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                        <i class="mdi mdi-bell"></i>
-                        <span class="count bg-danger"></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                        <h6 class="p-3 mb-0">Notifications</h6>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-calendar text-success"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject mb-1">Event today</p>
-                                <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-settings text-danger"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject mb-1">Settings</p>
-                                <p class="text-muted ellipsis mb-0"> Update dashboard </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-link-variant text-warning"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject mb-1">Launch Admin</p>
-                                <p class="text-muted ellipsis mb-0"> New admin wow! </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <p class="p-3 mb-0 text-center">See all notifications</p>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
-                        <div class="navbar-profile">
-                            <img class="img-xs rounded-circle" src="{{asset('assets')}}/admin/images/faces/face15.jpg" alt="">
-                            <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
-                            <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-divider">
+                        Menu
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                        <div id="submenu-1" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">E-Commerce</a>
+                                    <div id="submenu-1-2" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../index.html">E Commerce Dashboard</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../ecommerce-product.html">Product List</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../ecommerce-product-single.html">Product Single</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../ecommerce-product-checkout.html">Product Checkout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../dashboard-finance.html">Finance</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../dashboard-sales.html">Sales</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
+                                    <div id="submenu-1-1" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../dashboard-influencer.html">Influencer</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../influencer-finder.html">Influencer Finder</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../influencer-profile.html">Influencer Profile</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                        <h6 class="p-3 mb-0">Profile</h6>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-settings text-success"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject mb-1">Settings</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <div class="preview-icon bg-dark rounded-circle">
-                                    <i class="mdi mdi-logout text-danger"></i>
-                                </div>
-                            </div>
-                            <div class="preview-item-content">
-                                <p class="preview-subject mb-1">Log out</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <p class="p-3 mb-0 text-center">Advanced settings</p>
-                    </div>
-                </li>
-            </ul>
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-                <span class="mdi mdi-format-line-spacing"></span>
-            </button>
-        </div>
-    </nav>
-    <!-- partial -->
-    <div class="main-panel">
-        <div class="content-wrapper">
-        </div>
-        <!-- content-wrapper ends -->
-
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
+                        <div id="submenu-2" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cards.html">Cards <span class="badge badge-secondary">New</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="general.html">General</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="carousel.html">Carousel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="listgroup.html">List Group</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="typography.html">Typography</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="accordions.html">Accordions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="tabs.html">Tabs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Chart</a>
+                        <div id="submenu-3" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="chart-c3.html">C3 Charts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="chart-chartist.html">Chartist Charts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="chart-charts.html">Chart</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="chart-morris.html">Morris</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="chart-sparkline.html">Sparkline</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="chart-gauge.html">Guage</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Forms</a>
+                        <div id="submenu-4" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="form-elements.html">Form Elements</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="form-validation.html">Parsely Validations</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="multiselect.html">Multiselect</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
+                        <div id="submenu-5" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="general-table.html">General Tables</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="data-tables.html">Data Tables</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-divider">
+                        Features
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Pages</a>
+                        <div id="submenu-6" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="invoice.html">Invoice</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="blank-page.html">Blank Page</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="blank-page-header.html">Blank Page Header</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login.html">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="404-page.html">404 page</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="sign-up.html">Sign up Page</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="forgot-password.html">Forgot Password</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pricing.html">Pricing Tables</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="timeline.html">Timeline</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="calendar.html">Calendar</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="sortable-nestable-lists.html">Sortable/Nestable List</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="widgets.html">Widgets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="media-object.html">Media Objects</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cropper-image.html">Cropper</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="color-picker.html">Color Picker</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>Apps <span class="badge badge-secondary">New</span></a>
+                        <div id="submenu-7" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="inbox.html">Inbox</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="email-details.html">Email Detail</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="email-compose.html">Email Compose</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="message-chat.html">Message Chat</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-columns"></i>Icons</a>
+                        <div id="submenu-8" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icon-fontawesome.html">FontAwesome Icons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icon-material.html">Material Icons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icon-simple-lineicon.html">Simpleline Icon</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icon-themify.html">Themify Icon</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icon-flag.html">Flag Icons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icon-weather.html">Weather Icon</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
+                        <div id="submenu-9" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="map-google.html">Google Maps</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="map-vector.html">Vector Maps</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Menu Level</a>
+                        <div id="submenu-10" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Level 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Level 2</a>
+                                    <div id="submenu-11" class="collapse submenu" style="">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Level 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Level 2</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Level 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </div>
+

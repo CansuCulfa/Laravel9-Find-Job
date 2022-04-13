@@ -1,145 +1,123 @@
 
-<!-- partial -->
-<div class="container-scroller"/>
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="../../index.html"><img src="{{asset('assets')}}/admin/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="{{asset('assets')}}/admin/images/logo-mini.svg" alt="logo" /></a>
+<!-- ============================================================== -->
+<!-- main wrapper -->
+<!-- ============================================================== -->
+<div class="dashboard-main-wrapper">
+    <!-- ============================================================== -->
+    <!-- navbar -->
+    <!-- ============================================================== -->
+    <div class="dashboard-header">
+        <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <a class="navbar-brand" href="../index.html">Concept</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto navbar-right-top">
+                    <li class="nav-item">
+                        <div id="custom-search" class="top-search-bar">
+                            <input class="form-control" type="text" placeholder="Search..">
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown notification">
+                        <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                            <li>
+                                <div class="notification-title"> Notification</div>
+                                <div class="notification-list">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action active">
+                                            <div class="notification-info">
+                                                <div class="notification-list-user-img"><img src="{{asset('assets')}}/admin/assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+                                                    <div class="notification-date">2 min ago</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="notification-info">
+                                                <div class="notification-list-user-img"><img src="{{asset('assets')}}/admin/assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                <div class="notification-list-user-block"><span class="notification-list-user-name">
+John Abraham</span>is now following you
+                                                    <div class="notification-date">2 days ago</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="notification-info">
+                                                <div class="notification-list-user-img"><img src="{{asset('assets')}}/admin/assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                    <div class="notification-date">2 min ago</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="notification-info">
+                                                <div class="notification-list-user-img"><img src="{{asset('assets')}}/admin/assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+                                                    <div class="notification-date">2 min ago</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-footer"> <a href="#">View all notifications</a></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown connection">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                        <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+                            <li class="connection-list">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                        <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/github.png" alt="" > <span>Github</span></a>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                        <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/dribbble.png" alt="" > <span>Dribbble</span></a>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                        <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/dropbox.png" alt="" > <span>Dropbox</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                        <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                        <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/mail_chimp.png" alt="" ><span>Mail chimp</span></a>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                        <a href="#" class="connection-item"><img src="{{asset('assets')}}/admin/assets/images/slack.png" alt="" > <span>Slack</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conntection-footer"><a href="#">More</a></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown nav-user">
+                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('assets')}}/admin/assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                            <div class="nav-user-info">
+                                <h5 class="mb-0 text-white nav-user-name">
+                                    John Abraham</h5>
+                                <span class="status"></span><span class="ml-2">Available</span>
+                            </div>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <ul class="nav">
-        <li class="nav-item profile">
-            <div class="profile-desc">
-                <div class="profile-pic">
-                    <div class="count-indicator">
-                        <img class="img-xs rounded-circle " src="{{asset('assets')}}/admin/images/faces/face15.jpg" alt="">
-                        <span class="count bg-success"></span>
-                    </div>
-                    <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                        <span>Gold Member</span>
-                    </div>
-                </div>
-                <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
-                <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                    <a href="#" class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-settings text-primary"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-onepassword  text-info"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-calendar-today text-success"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-                <span class="menu-title">Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-                <span class="menu-title">Basic UI Elements</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pages/forms/basic_elements.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-                <span class="menu-title">Form Elements</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
-              </span>
-                <span class="menu-title">Tables</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pages/charts/chartjs.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-                <span class="menu-title">Charts</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pages/icons/mdi.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-              </span>
-                <span class="menu-title">Icons</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <span class="menu-icon">
-                <i class="mdi mdi-security"></i>
-              </span>
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
-              </span>
-                <span class="menu-title">Documentation</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+    <!-- ============================================================== -->
+    <!-- end navbar -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+</div>
