@@ -32,7 +32,6 @@
                 </div>
 
                 <br>
-                </br>
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Category Elements</h4>
@@ -81,6 +80,9 @@
                         </div>
                     </form>
                 </div>
+
+
+
 
 
 
