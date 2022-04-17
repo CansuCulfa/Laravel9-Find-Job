@@ -16,13 +16,18 @@
             </div>
         </div>
         <!-- ============================================================== -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
+                <li class="breadcrumb-item active">Show Category</li>
 
+            </ol>
+        </div>
         <! -- default --!>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header" id="top">
-                <a href="/admin/category/edit/{{$data->id}}" class="btn btn-rounded btn-dark" style="width: 150px">Edit</a>
-                <a href="/admin/category/destroy/{{$data->id}}" onclick="return confirm('Deleting !! Are You Sure?')" class="btn btn-rounded btn-dark" style="width: 150px">Delete</a>
-
+                <a href="{{route('admin.category.edit' , ['id'=>$data->id])}}" class="btn btn-rounded btn-dark" style="width: 150px">Edit</a>
+                <a href="{{route('admin.category.destroy' , ['id'=>$data->id])}}" onclick="return confirm('Deleting !! Are You Sure?')" class="btn btn-rounded btn-dark" style="width: 150px">Delete</a>
 
                 <br>
                 </br>

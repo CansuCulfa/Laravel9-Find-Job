@@ -41,20 +41,25 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 // ************************ Admin Panel Routes ****************************
-Route::get('/admin', [AdminHomeController::class,'index'])->name(name:'admin');
+Route::prefix('admin')->name('admin.')-> group(function () {
+    Route::get('/', [AdminHomeController::class, 'index'])->name(name: 'index');
 
 // ************************ Admin Category Routes ****************************
-Route::get('/admin/category', [AdminCategoryController::class,'index'])->name(name:'admin_category');
+    Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)-> group(function () {
 
-Route::get('/admin/category/create', [AdminCategoryController::class,'create'])->name(name:'admin_category_create');
+        Route::get('/', 'index')->name(name: 'index');
 
-Route::post('/admin/category/store', [AdminCategoryController::class,'store'])->name(name:'admin_category_store');
+        Route::get('/create', 'create')->name(name: 'create');
 
-Route::get('/admin/category/edit/{id}', [AdminCategoryController::class,'edit'])->name(name:'admin_category_edit');
+        Route::post('/store','store')->name(name: 'store');
 
-Route::post('/admin/category/update/{id}', [AdminCategoryController::class,'update'])->name(name:'admin_category_update');
+        Route::get('/edit/{id}', 'edit')->name(name: 'edit');
 
-Route::get('/admin/category/destroy/{id}', [AdminCategoryController::class,'destroy'])->name(name:'admin_category_destroy');
+        Route::post('/update/{id}', 'update')->name(name: 'update');
 
-Route::get('/admin/category/show/{id}', [AdminCategoryController::class,'show'])->name(name:'admin_category_show');
+        Route::get('/destroy/{id}', 'destroy')->name(name: 'destroy');
 
+        Route::get('/show/{id}',  'show')->name(name: 'show');
+
+    });
+});
