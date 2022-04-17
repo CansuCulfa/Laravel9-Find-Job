@@ -12,14 +12,18 @@
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h3 class="text-center">Category List</h3>
+                    <a href="/admin/category/create" class="btn btn-rounded btn-dark" style="width: 200px">Add Category</a>
+
                 </div>
             </div>
         </div>
         <!-- ============================================================== -->
 
         <div class="card">
-            <h5 class="card-header">Category List</h5>
+            <div class="card-header">
+                <h3 class="card-title">Category List</h3>
+            </div>
+
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
@@ -47,7 +51,8 @@
                             <td>{{$rs->image}}</td>
                             <td>{{$rs->status}}</td>
                             <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-primary btn-sm">Edit</a> </td>
-                            <td><a href="/admin/category/delete/{{$rs->id}}"class="btn btn-danger btn-sm" >Delete</a> </td>
+                            <td><a href="/admin/category/delete/{{$rs->id}}"class="btn btn-danger btn-sm"
+                            onclick="return confirm('Deleting !! Are You Sure?')">Delete</a> </td>
                             <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-success btn-sm">Show</a> </td>
                         </tr>
                     @endforeach
