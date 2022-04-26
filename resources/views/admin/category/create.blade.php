@@ -18,7 +18,7 @@
         <!-- ============================================================== -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="{{route('admin.index'}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                 <li class="breadcrumb-item active">Add Category</li>
 
             </ol>
@@ -27,7 +27,7 @@
         <! -- default --!>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header" id="top">
-                <h2 class="pageheader-title">Form Elements </h2>
+                <h2 class="pageheader-title">Add Category </h2>
                 <div class="page-breadcrumb">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -45,7 +45,7 @@
                         <h4 class="card-title">Category Elements</h4>
                     </div>
 
-                    <form class="forms-sample" action="{{route('admin.category.store')}}" method="post">
+                    <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
@@ -64,15 +64,12 @@
 
                             <div class="form-group">
                                 <label>Image</label>
-                                <input type="file" name="img[]" class="file-upload-default">
+                                <input type="file" class="file-upload-default" name="img[]" >
                                 <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                                    <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                          </span>
+                                    <input type="text" class="form-control file-upload-info" disabled=""  placeholder="Upload Image">
+
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control" name="status">
@@ -82,16 +79,10 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary me-2">Save</button>
+                                <input type="submit" class="btn btn-primary me-2" value="Save">
                             </div>
                         </div>
                     </form>
                 </div>
-
-
-
-
-
-
 
 @endsection
