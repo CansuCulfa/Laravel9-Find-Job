@@ -35,9 +35,8 @@
                     <thead>
                     <th>
                     <th scope="col">Id</th>
+                    <th scope="col">Parent</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Keywords</th>
-                    <th scope="col">Description</th>
                     <th scope="col">Image</th>
                     <th scope="col">Status</th>
                     <th style="width: 40px">Edit</th>
@@ -51,9 +50,8 @@
                         <tr>
                             <th scope="row">{{$rs->id}}</th>
                             <td>{{$rs->id}}</td>
-                            <td>{{$rs->title}}</td>
-                            <td>{{$rs->keywords}}</td>
-                            <td>{{$rs->description}}</td>
+                            <td> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }} </td>
+                            <td>{{$rs->title}} </td>
                             <td>
                                 @if ($rs->image)
                             <img src="{{Storage::url($rs->image)}}" style="height: 40px">
