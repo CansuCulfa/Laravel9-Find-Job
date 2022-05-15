@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminJobController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -46,6 +47,25 @@ Route::prefix('admin')->name('admin.')-> group(function () {
 
 // ************************ Admin Category Routes ****************************
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)-> group(function () {
+
+        Route::get('/', 'index')->name(name: 'index');
+
+        Route::get('/create', 'create')->name(name: 'create');
+
+        Route::post('/store','store')->name(name: 'store');
+
+        Route::get('/edit/{id}', 'edit')->name(name: 'edit');
+
+        Route::post('/update/{id}', 'update')->name(name: 'update');
+
+        Route::get('/destroy/{id}', 'destroy')->name(name: 'destroy');
+
+        Route::get('/show/{id}',  'show')->name(name: 'show');
+
+    });
+
+    // ************************ Admin Category Routes ****************************
+    Route::prefix('/job')->name('job.')->controller(AdminJobController::class)-> group(function () {
 
         Route::get('/', 'index')->name(name: 'index');
 

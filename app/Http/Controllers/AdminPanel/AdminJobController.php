@@ -4,25 +4,13 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CategoryController extends Controller
+class AdminJobController extends Controller
 {
-        protected $appends = [
-            'getParentsTree'
-        ];
 
-        public static function getParentsTree($category, $title)
-        {
-            if ($category->parent_id == 0)
-            {
-                return $title;
-            }
-            $parent = Category::find($category->parent_id);
-            $title = $parent->title . ' > ' . $title;
-            return CategoryController::getParentsTree($parent, $title);
-        }
     /**
      * Display a listing of the resource.
      *
@@ -30,8 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data= Category::all();
-       return view('admin.category.index' ,[
+        $data= Job::all();
+       return view('admin.job.index' ,[
            'data' => $data
 
        ]);
@@ -45,7 +33,7 @@ class CategoryController extends Controller
     public function create()
     {
         $data= Category::all();
-        return view('admin.category.create' ,[
+        return view('admin.job.create' ,[
             'data' => $data
 
         ]);
@@ -60,29 +48,35 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data= new Category();
-        $data->parent_id = $request->parent_id;
+        $data= new Job();
+        $data->category_id = $request->category_id;
+        $data->user_id =0;  // $request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->salary = $request->salary;
+        $data->minage = $request->minage;
+        $data->maxage = $request->maxage;
+        $data->experience = $request->experience;
         $data->status = $request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/job');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category, $id)
+    public function show(Job $job, $id)
     {
-        $data= Category::find($id);
-        return view('admin.category.show' ,[
+        $data= Job::find($id);
+        return view('admin.job.show' ,[
             'data' => $data
         ]);
     }
@@ -90,15 +84,15 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category, $id)
+    public function edit(Job $job, $id)
     {
 
-        $data= Category::find($id);
+        $data= Job::find($id);
         $datalist= Category::all();
-        return view('admin.category.edit' ,[
+        return view('admin.job.edit' ,[
             'data' => $data,
             'datalist' => $datalist
         ]);
@@ -109,38 +103,44 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category, $id)
+    public function update(Request $request, Job $job, $id)
     {
-        $data= Category::find($id);
-         $data->parent_id = $request->parent_id;
-         $data->title = $request->title;
-         $data->keywords = $request->keywords;
-         $data->description = $request->description;
+        $data= Job::find($id);
+        $data->category_id = $request->category_id;
+        $data->user_id =0;  // $request->user_id;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->salary = $request->salary;
+        $data->minage = $request->minage;
+        $data->maxage = $request->maxage;
+        $data->experience = $request->experience;
          $data->status = $request->status;
          if($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
          $data->save();
-         return redirect('admin/category');
+         return redirect('admin/job');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category, $id)
+    public function destroy(Job $job, $id)
     {
-        $data= Category::find($id);
+        $data= Job::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);
         }
         $data->delete();
-        return redirect('admin/category');
+        return redirect('admin/job');
 
 
     }
