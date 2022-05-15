@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Job: {{$data->title}}')
+@section('title', 'Show Job')
 
 
 
@@ -41,7 +41,8 @@
                                 </tr>
                                 <tr>
                                     <th>Category</th>
-                                    <td>{{$data->category_id}}</td>
+                                    {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category, $data->category->title) }}
+                                    <td>{{$data->category->title}}</td>
                                 </tr>
                                 <tr>
                                     <th>Title</th>
