@@ -1,28 +1,34 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Job: {{$data->title}}')
+@section('title', 'Edit Job:' .$data->title)
 
+@section('head')
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+@endsection
 
 
 @section('content')
     <!-- wrapper  -->
     <!-- ============================================================== -->
-    <div class="dashboard-wrapper">
-        <div class="container-fluid dashboard-content">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h3 class="text-center">Edit Job</h3>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <div class="col-sm-6">
+    <div class="dashboard-wrapper" xmlns="http://www.w3.org/1999/html">
+        <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                 <li class="breadcrumb-item active">Edit Job</li>
 
             </ol>
         </div>
+        <div class="container-fluid dashboard-content">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h3 class="text-center">Edit Job</h3>
+                </div>
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
         <! -- default --!>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header" id="top">
@@ -107,13 +113,15 @@
                     </form>
                 </div>
 
-
-
-
-
-
-
-
-
-
 @endsection
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <script>
+        $(function () {
+            // Summernote
+            $('.textarea').summernote()
+        })
+    </script>
+@endsection
+

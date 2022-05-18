@@ -18,7 +18,7 @@
 <body>
 @include("admin.header")
 
-@section('admin.sidebar')
+@section('sidebar')
     @include("admin.sidebar")
 @show
 

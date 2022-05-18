@@ -1,13 +1,21 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add Job')
-
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
     <!-- wrapper  -->
     <!-- ============================================================== -->
     <div class="dashboard-wrapper">
+        <div class="col-sm-12">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
+                <li class="breadcrumb-item active">Add Job</li>
+
+            </ol>
+        </div>
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -16,27 +24,11 @@
             </div>
         </div>
         <!-- ============================================================== -->
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                <li class="breadcrumb-item active">Add Job</li>
-
-            </ol>
-        </div>
 
         <! -- default --!>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header" id="top">
                 <h2 class="pageheader-title">Add Job </h2>
-                <div class="page-breadcrumb">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Forms</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Form Elements</li>
-                        </ol>
-                    </nav>
-                </div>
 
                 <br>
                 </br>
@@ -87,9 +79,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Detail Inf.</label>
-                                <textarea type="text" class="form-control" name="detail">
+                                <textarea class="form-control" id="detail" name="detail">
 
                                 </textarea>
+
+                                <script>
+                                    ClassicEditor
+                                        .create( document.querySelector( '#detail' ) )
+                                        .then( editor => {
+                                            console.log( editor );
+                                        } )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                                </script>
                             </div>
 
 
