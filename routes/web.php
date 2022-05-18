@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminJobController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -80,6 +81,18 @@ Route::prefix('admin')->name('admin.')-> group(function () {
         Route::get('/destroy/{id}', 'destroy')->name(name: 'destroy');
 
         Route::get('/show/{id}',  'show')->name(name: 'show');
+
+    });
+    // ************************ Admin Job Images Gallery ****************************
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)-> group(function () {
+
+        Route::get('/{jid}', 'index')->name(name: 'index');
+
+        Route::post('/store/{jid}','store')->name(name: 'store');
+
+        Route::get('/destroy/{jid}/{id}', 'destroy')->name(name: 'destroy');
+
+
 
     });
 });

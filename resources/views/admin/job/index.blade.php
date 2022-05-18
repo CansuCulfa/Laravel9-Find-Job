@@ -42,6 +42,7 @@
                     <th scope="col">Minage</th>
                     <th scope="col">Maxage</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Image Gallery</th>
                     <th scope="col">Status</th>
                     <th style="width: 40px">Edit</th>
                     <th style="width: 40px">Delete</th>
@@ -65,6 +66,11 @@
                             <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                 @endif
                             </td>
+                            <td> <a href="{{route('admin.image.index' , ['jid'=>$rs->id])}}"
+                                onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
+                                    <img src="{{asset('assets')}}/admin/images/gallery.png" style="height: 40px"> </a>
+                            </td>
+
                             <td>{{$rs->status}}</td>
                             <td><a href="{{route('admin.job.edit' , ['id'=>$rs->id])}}" class="btn btn-primary btn-sm">Edit</a> </td>
                             <td><a href="{{route('admin.job.destroy' , ['id'=>$rs->id])}}"class="btn btn-danger btn-sm"
