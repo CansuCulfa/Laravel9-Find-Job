@@ -1,6 +1,6 @@
 /*
 
-Known Template 
+Known Template
 
 https://templatemo.com/tm-516-known
 
@@ -17,7 +17,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-     TYPOGRAPHY              
+     TYPOGRAPHY
   -----------------------------------------*/
 
   h1,h2,h3,h4,h5,h6 {
@@ -57,7 +57,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-     GENERAL               
+     GENERAL
   -----------------------------------------*/
 
   html{
@@ -129,7 +129,7 @@ https://templatemo.com/tm-516-known
     color: #ffffff;
     margin: 0;
   }
-  
+
   .form .form-control,
   .entry-form .form-control {
     background: transparent;
@@ -177,11 +177,11 @@ https://templatemo.com/tm-516-known
     padding: 100px 0;
   }
 
-  #team, 
+  #team,
   #testimonial {
     text-align: center;
   }
-  
+
   #google-map iframe {
     border: 0;
     width: 100%;
@@ -191,7 +191,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-     BUTTONS               
+     BUTTONS
   -----------------------------------------*/
 
   .section-btn {
@@ -213,7 +213,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-       PRE LOADER              
+       PRE LOADER
   -----------------------------------------*/
 
   .preloader {
@@ -263,9 +263,9 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      MENU              
+      MENU
   -----------------------------------------*/
-  
+
   .text-primary { color: #29ca8e; }
 
   .custom-navbar {
@@ -347,7 +347,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      HOME  & SLIDER            
+      HOME  & SLIDER
   -----------------------------------------*/
 
   #home {
@@ -389,7 +389,7 @@ https://templatemo.com/tm-516-known
     background-size: cover;
     height: 650px;
   }
-  
+
   .caption h3 a { color: #FFF; }
   .caption h3 a:hover { color: #FF3; }
 
@@ -409,7 +409,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      FEATURE              
+      FEATURE
   -----------------------------------------*/
 
   .feature-thumb {
@@ -438,7 +438,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      ABOUT              
+      ABOUT
   -----------------------------------------*/
 
   #about figure {
@@ -469,7 +469,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      TEAM              
+      TEAM
   -----------------------------------------*/
 
   .team-thumb {
@@ -502,7 +502,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      COURSES             
+      COURSES
   -----------------------------------------*/
 
   #courses .section-title {
@@ -612,7 +612,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-     NEWS              
+     NEWS
   -----------------------------------------*/
 
   .news-thumb {
@@ -641,9 +641,9 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      TESTIMONIAL             
+      TESTIMONIAL
   -----------------------------------------*/
-  
+
   #testimonial .item {
     margin: 20px 0;
     padding: 4em 3em;
@@ -696,7 +696,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-      CONTACT             
+      CONTACT
   -----------------------------------------*/
 
   #contact {
@@ -725,7 +725,7 @@ https://templatemo.com/tm-516-known
   #contact-form .col-md-4 {
     padding-left: 0;
   }
-  
+
   .form .form-control,
   #contact-form .form-control {
     border: 0;
@@ -748,12 +748,12 @@ https://templatemo.com/tm-516-known
     border-color: #ffffff;
     color: #ffffff;
   }
-  
+
 
 
 
   /*---------------------------------------
-     FOOTER              
+     FOOTER
   -----------------------------------------*/
 
   footer {
@@ -846,7 +846,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-     SOCIAL ICON              
+     SOCIAL ICON
   -----------------------------------------*/
 
   .social-icon {
@@ -883,7 +883,7 @@ https://templatemo.com/tm-516-known
 
 
   /*---------------------------------------
-     RESPONSIVE STYLES              
+     RESPONSIVE STYLES
   -----------------------------------------*/
 
   @media screen and (max-width: 1170px) {
@@ -1011,7 +1011,7 @@ https://templatemo.com/tm-516-known
       height: inherit;
     }
   }
-  
+
   .lead { font-family: "Muli"; font-weight: 300; line-height: 1.8; }
 
   .team-thumb-actions { padding: 10px; border-top: 1px solid rgba(0,0,0,.05); }
@@ -1036,14 +1036,14 @@ https://templatemo.com/tm-516-known
   main > section:nth-child(even) .courses-thumb,
   main > section:nth-child(even) .team-thumb,
   main > section { background: #fff;  }
-  
+
   section .item,
   section .courses-thumb,
   section .team-thumb,
   .section-background,
   main > section .item,
-  main > section .courses-thumb, 
-  main > section .team-thumb, 
+  main > section .courses-thumb,
+  main > section .team-thumb,
   main > section:nth-child(even) { background: #f8f8f8; }
 
   .navbar-nav > li > .dropdown-menu { border-radius: 0; border: 0; }

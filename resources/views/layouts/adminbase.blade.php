@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
 
     @yield("head")
+
+
 </head>
 
 <body>
