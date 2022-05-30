@@ -44,7 +44,7 @@
                         <a class="nav-link" href="/admin/comment"><i class="fas fa-comment-dots"></i>Comments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/faq"><i class="fas fa-question"></i>FAQ</a>
+                        <a class="nav-link" href="{{route('admin.faq.index')}}"><i class="fas fa-question"></i>FAQ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/messages"><i class="far fa-envelope"></i>Messages</a>

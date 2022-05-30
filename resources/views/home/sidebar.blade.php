@@ -30,6 +30,7 @@
                         <li><a href="terms.html">Terms</a></li>
                     </ul>
                 </li>
+                <li><a href="{{route('faq')}}">FAQ</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,15 @@ class HomeController extends Controller
             $data= Setting::first();
         }
         return view("admin.setting", ['data' => $data]);
+    }
+    public function Faq()
+    {
+       $setting= Setting::first();
+       $datalist= Faq::all();
+       return view('home.faq',[
+           'setting'=>$setting,
+           'datalist'=>$datalist
+       ]);
     }
     public function settingUpdate(Request $request) {
         $id=$request->input('id');

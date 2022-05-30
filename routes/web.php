@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminJobController;
+use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,8 @@ Route::get('/welcome', function () {
 
 // 3- Call controller function
 Route::get('/', [HomeController::class,'index'])->name(name:'home');
-
+// ******************************HOME PAGE ROUTES *********************
+Route::get('/faq', [HomeController::class,'faq'])->name(name:'faq');
 // 4- Route -> Controller -> view
 Route::get('/test', [HomeController::class,'test'])->name(name:'test');
 
@@ -98,7 +100,24 @@ Route::prefix('admin')->name('admin.')-> group(function () {
 
         Route::get('/destroy/{jid}/{id}', 'destroy')->name(name: 'destroy');
 
+    });
+    // ************************ Admin Faq Routes ****************************
+    Route::prefix('/faq')->name('faq.')->controller(FaqController::class)-> group(function () {
 
+        Route::get('/', 'index')->name(name: 'index');
+
+        Route::get('/create', 'create')->name(name: 'create');
+
+        Route::post('/store','store')->name(name: 'store');
+
+        Route::get('/edit/{id}', 'edit')->name(name: 'edit');
+
+        Route::post('/update/{id}', 'update')->name(name: 'update');
+
+        Route::get('/destroy/{id}', 'destroy')->name(name: 'destroy');
+
+        Route::get('/show/{id}',  'show')->name(name: 'show');
 
     });
+
 });

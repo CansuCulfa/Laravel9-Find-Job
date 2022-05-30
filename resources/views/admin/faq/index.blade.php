@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title' , 'Job List')
+@section('title' , 'FAQ List')
 
 @section('content')
 
@@ -12,13 +12,13 @@
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <a href="{{route('admin.job.create')}}" class="btn btn-rounded btn-dark" style="width: 200px">Add Job</a>
+                    <a href="{{route('admin.faq.create')}}" class="btn btn-rounded btn-dark" style="width: 200px">Add Question</a>
 
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Job List</li>
+                        <li class="breadcrumb-item active">Faq List</li>
 
                     </ol>
             </div>
@@ -27,22 +27,16 @@
 
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Job List</h3>
+                <h3 class="card-title">Faq List</h3>
             </div>
 
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                     <th>
-                    <th style="width: 10px">Id</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Experience</th>
-                    <th scope="col">Minage</th>
-                    <th scope="col">Maxage</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Image Gallery</th>
+                    <th>Id</th>
+                    <th scope="col">Question</th>
+                    <th scope="col">Answer</th>
                     <th scope="col">Status</th>
                     <th style="width: 40px">Edit</th>
                     <th style="width: 40px">Delete</th>
@@ -55,27 +49,13 @@
                         <tr>
                             <th scope="row">{{$rs->id}}</th>
                             <td>{{$rs->id}}</td>
-                            <td> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title) }} </td>
-                            <td>{{$rs->title}} </td>
-                            <td>{{$rs->salary}} </td>
-                            <td>{{$rs->experience}} </td>
-                            <td>{{$rs->minage}} </td>
-                            <td>{{$rs->maxage}} </td>
-                            <td>
-                                @if ($rs->image)
-                            <img src="{{Storage::url($rs->image)}}" style="height: 40px">
-                                @endif
-                            </td>
-                            <td> <a href="{{route('admin.image.index' , ['jid'=>$rs->id])}}"
-                                onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
-                                    <img src="{{asset('assets')}}/admin/images/gallery.png" style="height: 40px"> </a>
-                            </td>
-
+                            <td>{{$rs->question}} </td>
+                            <td>{!! $rs->answer !!} </td>
                             <td>{{$rs->status}}</td>
-                            <td><a href="{{route('admin.job.edit' , ['id'=>$rs->id])}}" class="btn btn-primary btn-sm">Edit</a> </td>
-                            <td><a href="{{route('admin.job.destroy' , ['id'=>$rs->id])}}"class="btn btn-danger btn-sm"
+                            <td><a href="{{route('admin.faq.edit' , ['id'=>$rs->id])}}" class="btn btn-primary btn-sm">Edit</a> </td>
+                            <td><a href="{{route('admin.faq.destroy' , ['id'=>$rs->id])}}"class="btn btn-danger btn-sm"
                             onclick="return confirm('Deleting !! Are You Sure?')">Delete</a> </td>
-                            <td><a href="{{route('admin.job.show' , ['id'=>$rs->id])}}" class="btn btn-success btn-sm">Show</a> </td>
+                            <td><a href="{{route('admin.faq.show' , ['id'=>$rs->id])}}" class="btn btn-success btn-sm">Show</a> </td>
                         </tr>
                     @endforeach
                     </tbody>
