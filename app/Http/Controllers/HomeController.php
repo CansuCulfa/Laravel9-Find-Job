@@ -12,10 +12,12 @@ class HomeController extends Controller
     public function index()
     {
         $sliderdata = Job::limit(4)->get();
+        $joblist1 = Job::limit(6)->get();
         $setting= Setting::first();
         return view('home.index',[
             'setting'=>$setting,
-            'sliderdata'=>$sliderdata
+            'sliderdata'=>$sliderdata,
+            'joblist1'=>$joblist1
         ]);
     }
 
