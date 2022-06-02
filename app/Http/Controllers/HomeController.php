@@ -20,7 +20,13 @@ class HomeController extends Controller
             'joblist1'=>$joblist1
         ]);
     }
-
+    public function job($id)
+    {
+        $data = Job::find($id);
+        return view('home.job',[
+            'data'=>$data
+        ]);
+    }
     public function test()
     {
 

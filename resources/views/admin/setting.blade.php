@@ -52,31 +52,31 @@
                                            aria-selected="true">General</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="custom-tabs-one-smtp-tab" data-toggle="tab"
+                                        <a class="nav-link active" id="custom-tabs-one-smtp-tab" data-toggle="tab"
                                            href="#custom-tabs-one-smtp"
                                            role="tab" aria-controls="custom-tabs-one-smtp" aria-selected="false">Smtp
                                             Email</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="custom-tabs-one-social-tab" data-toggle="tab"
+                                        <a class="nav-link active" id="custom-tabs-one-social-tab" data-toggle="tab"
                                            href="#custom-tabs-one-social"
                                            role="tab" aria-controls="custom-tabs-one-social" aria-selected="false">Social
                                             Media</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="custom-tabs-one-about-tab" data-toggle="tab"
+                                        <a class="nav-link active" id="custom-tabs-one-about-tab" data-toggle="tab"
                                            href="#custom-tabs-one-about"
                                            role="tab" aria-controls="custom-tabs-one-about" aria-selected="false">About
                                             Us</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="custom-tabs-one-contact-tab" data-toggle="tab"
+                                        <a class="nav-link active" id="custom-tabs-one-contact-tab" data-toggle="tab"
                                            href="#custom-tabs-one-contact"
                                            role="tab" aria-controls="custom-tabs-one-contact" aria-selected="false">Contact
                                             Page</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="custom-tabs-one-references-tab" data-toggle="tab"
+                                        <a class="nav-link active" id="custom-tabs-one-references-tab" data-toggle="tab"
                                            href="#custom-tabs-one-references"
                                            role="tab" aria-controls="custom-tabs-one-references" aria-selected="false">References</a>
                                     </li>
@@ -139,7 +139,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="custom-tabs-one-smtp" role="tabpanel"
+                                    <div class="tab-pane fade active show" id="custom-tabs-one-smtp" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-smtp-tab">
                                         <div class="card-body">
                                             <div class="form-group">
@@ -164,7 +164,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="custom-tabs-one-social" role="tabpanel"
+                                    <div class="tab-pane fade active show" id="custom-tabs-one-social" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-social-tab">
                                         <div class="card-body">
                                             <div class="form-group">
@@ -194,7 +194,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="custom-tabs-one-about" role="tabpanel"
+                                    <div class="tab-pane fade active show" id="custom-tabs-one-about" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-about-tab">
                                         <div class="card-body">
                                             <div class="form-group">
@@ -215,7 +215,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="custom-tabs-one-contact" role="tabpanel"
+                                    <div class="tab-pane fade active show" id="custom-tabs-one-contact" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-contact-tab">
                                         <div class="card-body">
                                             <div class="form-group">
@@ -236,7 +236,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="custom-tabs-one-references" role="tabpanel"
+                                    <div class="tab-pane fade active show" id="custom-tabs-one-references" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-references-tab">
                                         <div class="card-body">
                                             <div class="form-group">
