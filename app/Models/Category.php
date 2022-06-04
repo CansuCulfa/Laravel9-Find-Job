@@ -12,4 +12,14 @@ class Category extends Model
     public function jobs() {
         return $this->hasMany(Job::class);
     }
+    # one to many reverse
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'parent_id');
+    }
 }
