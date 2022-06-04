@@ -19,7 +19,7 @@
         <!-- MENU LINKS -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-nav-first">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a href="{{route('home')}}">Home</a></li>
 
                 <li class="dropdown">
 
@@ -38,7 +38,6 @@
                 </li>
                 @endforeach
 
-                <li><a href="about-us.html">About Us</a></li>
                 <li><a href="blog-posts.html">Blog</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
@@ -50,7 +49,9 @@
                     </ul>
                 </li>
                 <li><a href="{{route('faq')}}">FAQ</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="{{route('about')}}">About Us</a></li>
+                <li><a href="{{route('contact')}}">Contact Us</a></li>
+                <li><a href="{{route('references')}}">References</a></li>
                         </ul>
 
         </div>

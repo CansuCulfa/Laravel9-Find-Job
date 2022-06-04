@@ -27,9 +27,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-// 3- Call controller function
-Route::get('/', [HomeController::class,'index'])->name(name:'home');
 // ******************************HOME PAGE ROUTES *********************
+Route::get('/', [HomeController::class,'index'])->name(name:'home');
+Route::get('/about', [HomeController::class,'about'])->name(name:'about');
+Route::get('/references', [HomeController::class,'references'])->name(name:'references');
+Route::get('/contact', [HomeController::class,'contact'])->name(name:'contact');
+
 Route::get('/faq', [HomeController::class,'faq'])->name(name:'faq');
 // 4- Route -> Controller -> view
 Route::get('/test', [HomeController::class,'test'])->name(name:'test');
