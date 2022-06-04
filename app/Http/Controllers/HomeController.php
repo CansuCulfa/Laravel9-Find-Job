@@ -6,15 +6,18 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $page='home';
         $sliderdata = Job::limit(4)->get();
         $joblist1 = Job::limit(6)->get();
         $setting= Setting::first();
         return view('home.index',[
+            'page'=>$page,
             'setting'=>$setting,
             'sliderdata'=>$sliderdata,
             'joblist1'=>$joblist1
@@ -23,8 +26,10 @@ class HomeController extends Controller
     public function job($id)
     {
         $data = Job::find($id);
+        $images = DB::table('images')->where('job_id' ,$id)->get();
         return view('home.job',[
-            'data'=>$data
+            'data'=>$data,
+            'images'=>$images
         ]);
     }
     public function test()

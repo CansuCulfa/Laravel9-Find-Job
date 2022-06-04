@@ -62,7 +62,12 @@
                             <div class="mySlides fade-my-slide">
                                 <div class="numbertext">1 / 3</div>
                                 <img src="{{Storage::url($rs->image)}}" style="width:100%">
-                                <div class="text">Caption One</div>
+
+                                  <a>{{$rs->title}}</a>
+
+                                <div class="text center-block">
+                                    <td><a href="{{route('job' , ['id'=>$rs->id])}}" class="btn btn-primary btn-sm">Click for view</a> </td>
+                                </div>
                             </div>
                         @endif
 
@@ -70,7 +75,12 @@
 
                             <div class="numbertext">2 / 3</div>
                             <img src="{{Storage::url($rs->image)}}" style="width:100%">
-                            <div class="text">Caption Two</div>
+
+                            <a>{{$rs->title}}</a>
+
+                            <div class="text center">
+                                <td><a href="{{route('job' , ['id'=>$rs->id])}}" class="btn btn-primary btn-sm">Click for view</a> </td>
+                            </div>
                         </div>
                 @endforeach
 
@@ -92,7 +102,7 @@
 
             </section>
 
-          
+
 
         </div>
     </section>
@@ -131,14 +141,14 @@
                                         <img src="{{Storage::url($rs->image)}}" class="img-responsive">
                                     </div>
                                     <div class="courses-detail">
-                                        <h3><a href="job-details.html">Lorem ipsum dolor sit amet</a></h3>
+                                        <h3><a href="job-details.html">{{$rs->title}}</a></h3>
 
                                         <p class="lead"><strong>{{$rs->salary}}</strong></p>
 
                                         <p> <strong>{{$rs->title}}</strong></p>
                                     </div>
                                     <div class="courses-info">
-                                        <a href="job-details.html" class="section-btn btn btn-primary btn-block">View Details</a>
+                                        <a href="{{route('job',['id'=>$rs->id])}}" class="section-btn btn btn-primary btn-block">View Details</a>
                                     </div>
                                 @endforeach
                         </div>
