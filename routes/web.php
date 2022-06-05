@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminJobController;
+use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
@@ -34,6 +35,7 @@ Route::get('/about', [HomeController::class,'about'])->name(name:'about');
 Route::get('/references', [HomeController::class,'references'])->name(name:'references');
 Route::get('/contact', [HomeController::class,'contact'])->name(name:'contact');
 Route::post('/storemessage', [HomeController::class,'storemessage'])->name(name:'storemessage');
+Route::post('/storecomment', [HomeController::class,'storecomment'])->name(name:'storecomment');
 
 
 Route::get('/faq', [HomeController::class,'faq'])->name(name:'faq');
@@ -138,5 +140,13 @@ Route::prefix('admin')->name('admin.')-> group(function () {
         Route::get('/show/{id}',  'show')->name(name: 'show');
 
     });
+// ************************ Admin Comment Gallery ****************************
+    Route::prefix('/comment')->name('comment.')->controller(CommentController::class)-> group(function () {
 
+        Route::get('/', 'index')->name(name: 'index');
+        Route::get('/show/{id}',  'show')->name(name: 'show');
+        Route::post('/update/{id}', 'update')->name(name: 'update');
+        Route::get('/destroy/{id}', 'destroy')->name(name: 'destroy');
+
+    });
 });
