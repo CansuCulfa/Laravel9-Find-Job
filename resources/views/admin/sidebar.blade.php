@@ -47,7 +47,7 @@
                         <a class="nav-link" href="{{route('admin.faq.index')}}"><i class="fas fa-question"></i>FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/messages"><i class="far fa-envelope"></i>Messages</a>
+                        <a class="nav-link" href="{{route('admin.message.index')}}"><i class="far fa-envelope"></i>Messages</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/image"><i class="far fa-images"></i>Images</a>

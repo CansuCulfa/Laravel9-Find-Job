@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminPanel\AdminJobController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -32,6 +33,8 @@ Route::get('/', [HomeController::class,'index'])->name(name:'home');
 Route::get('/about', [HomeController::class,'about'])->name(name:'about');
 Route::get('/references', [HomeController::class,'references'])->name(name:'references');
 Route::get('/contact', [HomeController::class,'contact'])->name(name:'contact');
+Route::post('/storemessage', [HomeController::class,'storemessage'])->name(name:'storemessage');
+
 
 Route::get('/faq', [HomeController::class,'faq'])->name(name:'faq');
 // 4- Route -> Controller -> view
@@ -106,6 +109,15 @@ Route::prefix('admin')->name('admin.')-> group(function () {
         Route::post('/store/{jid}','store')->name(name: 'store');
 
         Route::get('/destroy/{jid}/{id}', 'destroy')->name(name: 'destroy');
+
+    });
+    // ************************ Admin Message Gallery ****************************
+    Route::prefix('/message')->name('message.')->controller(MessageController::class)-> group(function () {
+
+        Route::get('/', 'index')->name(name: 'index');
+        Route::get('/show/{id}',  'show')->name(name: 'show');
+        Route::post('/update/{id}', 'update')->name(name: 'update');
+        Route::get('/destroy/{id}', 'destroy')->name(name: 'destroy');
 
     });
     // ************************ Admin Faq Routes ****************************

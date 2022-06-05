@@ -38,11 +38,18 @@
                         <div class="row">
 
                             <div class="col-md-6 col-sm-12">
-                                <form id="contact-form" role="form" action="" method="post">
+                               @include('home.messages')
+                                <form id="contact-form" role="form" action="{{route("storemessage")}}" method="post">
+                                    @csrf
                                     <div class="col-md-12 col-sm-12">
-                                        <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+                                        <input type="text" class="form-control" placeholder="Name & Surname" name="name" required="">
 
-                                        <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+                                        <input type="email" class="form-control" placeholder="Email" name="email" required="">
+
+                                        <input type="tel" class="form-control" placeholder="Phone number" name="phone" required="">
+
+                                        <input type="text" class="form-control" placeholder="Subject" name="subject" required="">
+
 
                                         <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
                                     </div>
