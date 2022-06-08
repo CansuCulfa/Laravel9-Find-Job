@@ -119,9 +119,9 @@
                         </div>
                     </div>
                     @auth
-                        <button class="primary-btn">Submit</button>
+                        <button class="btn btn-success">Submit</button>
                     @else
-                        <a href="/login" class="btn btn-primary btn-sm">For Submit Your Review, Please Login </a>
+                        <a href="/login" class="btn btn-success"> For Submit Your Review, Please Login </a>
                     @endauth
                 </form>
 

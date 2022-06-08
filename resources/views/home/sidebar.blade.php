@@ -1,7 +1,9 @@
 
 <!-- MENU -->
 <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+
     <div class="container">
+       
         @php
             $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
         @endphp
@@ -13,7 +15,28 @@
             </button>
 
             <!-- lOGO TEXT HERE -->
-            <a href="#" class="navbar-brand">Jobs Agency</a>
+            <a href="{{route('home')}}" class="navbar-brand">Jobs Agency</a>
+        </div>
+        <div class="pull-right">
+            <ul class="header-btns">
+                <li class="header-account dropdown default-dropdown">
+                    @auth
+                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <i class="fa fa-user-o"></i>
+                            </div>
+                            <strong class="text-uppercase">{{Auth::user()->name}} <i class="fa fa-caret-down"></i> </strong>
+                        </div>
+                        <a href="/logoutuser" class="text-uppercase">Logout</a>
+                    @endauth
+                    @guest
+                        <a href="/loginuser" class="text-uppercase">Login</a> / <a href="/registeruser" class="text-uppercase">Join</a>
+                    @endguest
+                    <ul class="custom-menu">
+
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <!-- MENU LINKS -->
@@ -38,22 +61,15 @@
                 </li>
                 @endforeach
 
-                <li><a href="blog-posts.html">Blog</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="terms.html">Terms</a></li>
-                    </ul>
-                </li>
                 <li><a href="{{route('faq')}}">FAQ</a></li>
                 <li><a href="{{route('about')}}">About Us</a></li>
                 <li><a href="{{route('contact')}}">Contact Us</a></li>
                 <li><a href="{{route('references')}}">References</a></li>
+
                         </ul>
 
         </div>
+
+
     </div>
 </section>

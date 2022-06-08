@@ -36,6 +36,9 @@ Route::get('/references', [HomeController::class,'references'])->name(name:'refe
 Route::get('/contact', [HomeController::class,'contact'])->name(name:'contact');
 Route::post('/storemessage', [HomeController::class,'storemessage'])->name(name:'storemessage');
 Route::post('/storecomment', [HomeController::class,'storecomment'])->name(name:'storecomment');
+Route::view('/loginuser', 'home.login');
+Route::view('/registeruser', 'home.register');
+Route::get('/logoutuser', [HomeController::class,'logout'])->name(name:'logoutuser');
 
 
 Route::get('/faq', [HomeController::class,'faq'])->name(name:'faq');
