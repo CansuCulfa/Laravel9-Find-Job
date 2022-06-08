@@ -3,7 +3,7 @@
 <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
 
     <div class="container">
-       
+
         @php
             $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
         @endphp

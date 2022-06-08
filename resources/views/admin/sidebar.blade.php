@@ -1,6 +1,16 @@
 
 <div class="dashboard-main-wrapper">
 <div class="nav-left-sidebar sidebar-dark">
+    <!-- side bar user -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img src="{{asset('assets')}}/admin/assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle">
+        </div>
+        <div class="info">
+
+            <a href="/logoutuser" class="text-uppercase">Logout</a>
+        </div>
+    </div>
     <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
@@ -22,9 +32,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="../dashboard-sales.html"><i class="fas fa-arrows-alt-h"></i>Accepted Orders</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../dashboard-sales.html"><i class="fas fa-arrows-alt-h"></i>Shipping Orders</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="../dashboard-sales.html"><i class="fas fa-arrows-alt-h"></i>Completed Orders</a>
