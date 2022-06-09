@@ -37,10 +37,10 @@ Route::get('/references', [HomeController::class,'references'])->name(name:'refe
 Route::get('/contact', [HomeController::class,'contact'])->name(name:'contact');
 Route::post('/storemessage', [HomeController::class,'storemessage'])->name(name:'storemessage');
 Route::post('/storecomment', [HomeController::class,'storecomment'])->name(name:'storecomment');
-Route::view('/loginuser', 'home.login');
-Route::view('/registeruser', 'home.register');
+Route::view('/loginuser', 'home.login')->name(name:'loginuser');
+Route::view('/registeruser', 'home.register')->name(name:'registeruser');
 Route::get('/logoutuser', [HomeController::class,'logout'])->name(name:'logoutuser');
-Route::view('/loginadmin', 'admin.login');
+Route::view('/loginadmin', 'admin.login')->name(name:'loginadmin');
 
 Route::post('/loginadmincheck', [HomeController::class,'loginadmincheck'])->name(name:'loginadmincheck');
 
@@ -64,7 +64,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 // ************************ Admin Panel Routes ****************************
-Route::prefix('admin')->name('admin.')-> group(function () {
+Route::middleware('admin')->prefix('admin')->name('admin.')-> group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name(name: 'index');
 
 // ************************ General Routes ****************************
