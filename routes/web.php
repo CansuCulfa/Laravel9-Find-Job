@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
@@ -62,6 +63,13 @@ Route::get('/categoryjobs/{id}/{slug}', [HomeController::class,'categoryjobs'])-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+// ************************ User Auth Control ****************************
+Route::middleware('auth')->group(function () {
+    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)-> group(function () {
+        Route::get('/', 'index')->name(name: 'index');
+
+    });
 
 // ************************ Admin Panel Routes ****************************
 Route::middleware('admin')->prefix('admin')->name('admin.')-> group(function () {
@@ -169,4 +177,6 @@ Route::middleware('admin')->prefix('admin')->name('admin.')-> group(function () 
         Route::get('/destroyrole/{uid}/{rid}', 'destroyrole')->name(name: 'destroyrole');
 
     });
+
+});
 });

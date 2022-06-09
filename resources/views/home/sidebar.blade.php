@@ -33,6 +33,7 @@
                         <a href="/loginuser" class="text-uppercase">Login</a> / <a href="/registeruser" class="text-uppercase">Join</a>
                     @endguest
                     <ul class="custom-menu">
+                        <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i>My Account</a></li>
 
                     </ul>
                 </li>
