@@ -64,10 +64,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// ************************ User Auth Control ****************************
+// ************************ User Auth Routes ****************************
 Route::middleware('auth')->group(function () {
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)-> group(function () {
         Route::get('/', 'index')->name(name: 'index');
+        Route::get('/reviews', 'reviews')->name(name: 'reviews');
+        Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name(name: 'reviewdestroy');
 
     });
 
