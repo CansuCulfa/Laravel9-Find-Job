@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
-use App\Models\Message;
+use App\Models\Role;
+use App\Models\RoleUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class MessageController extends Controller
+class AdminUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $data= Message::all();
-        return view('admin.message.index' ,[
+        $data= User::all();
+        return view('admin.user.index' ,[
             'data' => $data
 
         ]);
@@ -51,13 +53,32 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        $data= Message::find($id);
-        $data->status= 'Read';
-        $data->save();
-        return view('admin.message.show', [
-            'data'=>$data
+        $data= User::find($id);
+        $roles= Role::all();
+        return view('admin.user.show', [
+            'data'=> $data,
+            'roles'=> $roles,
+
         ]);
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function addrole(Request $request, $id)
+    {
+        $data= new RoleUser();
+        $data->user_id = $id;
+        $data->user_id = $request->role_id;
+        $data->save();
+        return redirect(route('admin.user.show'), ['id'=>$id]);
+
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -79,11 +100,7 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data= Message::find($id);
-        $data->note = $request->note;
-        $data->save();
-        return redirect(route('admin.message.show'), ['id'=>$id]);
-
+        //
     }
 
     /**
@@ -92,10 +109,10 @@ class MessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyrole($uid,$rid)
     {
-        $data= Message::find($id);
-        $data->delete();
-        return redirect(route('admin.message.index'));
+        $user= User::find($uid);
+        $user->roles()->detach($rid); #Many to Many relation dete related data
+        return redirect(route('admin.user.show',['id'=>$uid]));
     }
 }

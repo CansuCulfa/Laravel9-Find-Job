@@ -63,7 +63,7 @@
                         <a class="nav-link" href="/admin/profile"><i class="far fa-id-badge"></i>Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/usercv"><i class="far fa-user text-green-500"></i>UserCv</a>
+                        <a class="nav-link" href="/admin/user"><i class="far fa-user text-green-500"></i>User</a>
                     </li>
                     <li class="nav-header">LABELS</li>
                     <li class="nav-item">
